@@ -50,6 +50,10 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
+    # # To make a direct symlink without going through nix store and without the need
+    # # to switch home-manager for the changes to take effect there is a way to do that
+    # # with `config.lib.file.mkOutOfStoreSymlink` function outlined here https://discourse.nixos.org/t/how-to-manage-dotfiles-with-home-manager/30576/2
+
     ".config/zellij/themes/rose-pine-dawn.kdl".source = config/zellij/themes/rose-pine-dawn.kdl;
   };
 
