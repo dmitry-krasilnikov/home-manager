@@ -49,6 +49,8 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+
+    ".config/zellij/themes/rose-pine-dawn.kdl".source = config/zellij/themes/rose-pine-dawn.kdl;
   };
 
   # Home Manager can also manage your environment variables through
@@ -73,6 +75,15 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.yazi.enable = true;
+
+  programs.zellij = {
+    enable = true;
+    settings = {
+      theme = "rose-pine-dawn";
+    };
+  };
 
   programs.nixvim = {
     enable = true;
