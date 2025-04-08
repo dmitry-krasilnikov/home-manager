@@ -34,6 +34,9 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+
+    # General purpose LSPs for Helix editor
+    pkgs.vscode-langservers-extracted
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
