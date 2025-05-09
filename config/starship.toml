@@ -1,0 +1,7 @@
+[kubernetes]
+disabled = false
+
+[[kubernetes.contexts]]
+context_pattern = "^production.*$"
+context_alias = "production"
+style = "green"
