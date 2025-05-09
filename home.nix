@@ -37,8 +37,8 @@
 
     # General purpose LSPs for Helix editor
     pkgs.vscode-langservers-extracted
-
     pkgs.starship
+    pkgs.mycli
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
