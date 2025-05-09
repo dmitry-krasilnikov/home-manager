@@ -60,8 +60,8 @@
     # # with `config.lib.file.mkOutOfStoreSymlink` function outlined here https://discourse.nixos.org/t/how-to-manage-dotfiles-with-home-manager/30576/2
 
     ".config/zellij/themes/rose-pine-dawn.kdl".source = config/zellij/themes/rose-pine-dawn.kdl;
-
     ".config/starship.toml".source = config/starship.toml;
+    ".myclirc".source = config/myclirc;
   };
 
   # Home Manager can also manage your environment variables through
