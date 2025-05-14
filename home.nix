@@ -35,8 +35,10 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
 
-    # General purpose LSPs for Helix editor
+    # Helix editor LSPs & formatters
     pkgs.vscode-langservers-extracted
+    pkgs.kdlfmt
+
     pkgs.starship
     pkgs.mycli
   ];
