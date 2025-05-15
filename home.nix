@@ -41,6 +41,8 @@
 
     pkgs.starship
     pkgs.mycli
+
+    pkgs.ttyper
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
