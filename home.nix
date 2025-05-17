@@ -63,6 +63,7 @@
     # # to switch home-manager for the changes to take effect there is a way to do that
     # # with `config.lib.file.mkOutOfStoreSymlink` function outlined here https://discourse.nixos.org/t/how-to-manage-dotfiles-with-home-manager/30576/2
 
+    ".config/zellij/config.kdl".source = config/zellij/config.kdl;
     ".config/zellij/themes/rose-pine-dawn.kdl".source = config/zellij/themes/rose-pine-dawn.kdl;
     ".config/starship.toml".source = config/starship.toml;
     ".myclirc".source = config/myclirc;
@@ -95,9 +96,6 @@
 
   programs.zellij = {
     enable = true;
-    settings = {
-      theme = "rose-pine-dawn";
-    };
   };
 
   programs.nixvim = {
