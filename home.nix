@@ -43,6 +43,12 @@
     pkgs.mycli
 
     pkgs.ttyper
+
+    pkgs.nushell
+    pkgs.nushellPlugins.query
+    pkgs.nushellPlugins.polars
+    pkgs.nushellPlugins.gstat
+    pkgs.nushellPlugins.formats
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
