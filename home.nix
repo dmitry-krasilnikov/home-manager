@@ -39,16 +39,20 @@
     pkgs.vscode-langservers-extracted
     pkgs.kdlfmt
 
-    pkgs.starship
+    # CLI apps
     pkgs.mycli
-
     pkgs.ttyper
 
+    # GUI apps
+    pkgs.calibre
+
+    # Shell
     pkgs.nushell
     pkgs.nushellPlugins.query
     pkgs.nushellPlugins.polars
     pkgs.nushellPlugins.gstat
     pkgs.nushellPlugins.formats
+    pkgs.starship
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
