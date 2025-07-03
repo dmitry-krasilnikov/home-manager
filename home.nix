@@ -53,6 +53,11 @@
     pkgs.nushellPlugins.gstat
     pkgs.nushellPlugins.formats
     pkgs.starship
+
+    # Tilt
+    pkgs.k3d
+    pkgs.ctlptl
+    pkgs.tilt
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
