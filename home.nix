@@ -58,6 +58,9 @@
     pkgs.k3d
     pkgs.ctlptl
     pkgs.tilt
+
+    # Python
+    pkgs.pipx
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
