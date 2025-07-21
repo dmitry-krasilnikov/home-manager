@@ -54,6 +54,7 @@
     pkgs.nushellPlugins.gstat
     pkgs.nushellPlugins.formats
     pkgs.starship
+    pkgs.carapace
 
     # Tilt
     pkgs.k3d
