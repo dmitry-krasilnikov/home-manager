@@ -42,6 +42,7 @@
     # CLI apps
     pkgs.mycli
     pkgs.ttyper
+    pkgs.argocd
 
     # GUI apps
     pkgs.calibre
