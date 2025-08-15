@@ -58,6 +58,7 @@
 
     # Tilt
     pkgs.k3d
+    pkgs.kind
     pkgs.ctlptl
     pkgs.tilt
 
