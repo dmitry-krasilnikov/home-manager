@@ -359,21 +359,21 @@ keybinds clear-defaults=true {
         bind "Ctrl Alt f" {
             ToggleFloatingPanes
         }
-        bind "Ctrl Alt h" {
-            MoveFocusOrTab "left"
-        }
-        bind "Ctrl Alt i" {
-            MoveTab "left"
-        }
-        bind "Ctrl Alt j" {
-            MoveFocus "down"
-        }
-        bind "Ctrl Alt k" {
-            MoveFocus "up"
-        }
-        bind "Ctrl Alt l" {
-            MoveFocusOrTab "right"
-        }
+        // bind "Ctrl Alt h" {
+        //     MoveFocusOrTab "left"
+        // }
+        // bind "Ctrl Alt i" {
+        //     MoveTab "left"
+        // }
+        // bind "Ctrl Alt j" {
+        //     MoveFocus "down"
+        // }
+        // bind "Ctrl Alt k" {
+        //     MoveFocus "up"
+        // }
+        // bind "Ctrl Alt l" {
+        //     MoveFocusOrTab "right"
+        // }
         bind "Ctrl Alt n" {
             NewPane
         }
@@ -487,9 +487,9 @@ keybinds clear-defaults=true {
         bind "Alt i" {
             MoveTab "left"
         }
-        bind "Alt j" {
-            MoveFocus "down"
-        }
+        // bind "Alt j" {
+        //     MoveFocus "down"
+        // }
         bind "Alt k" {
             MoveFocus "up"
         }
