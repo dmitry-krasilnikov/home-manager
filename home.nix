@@ -56,10 +56,10 @@
     pkgs.starship
     pkgs.carapace
 
+    # Kubernetes
+    pkgs.kubectl
+
     # Tilt
-    pkgs.k3d
-    pkgs.kind
-    pkgs.ctlptl
     pkgs.tilt
 
     # Python
