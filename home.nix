@@ -56,12 +56,6 @@
     pkgs.starship
     pkgs.carapace
 
-    # Kubernetes
-    pkgs.kubectl
-
-    # Tilt
-    pkgs.tilt
-
     # Python
     pkgs.pipx
   ];
