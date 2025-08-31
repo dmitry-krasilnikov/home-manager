@@ -171,4 +171,30 @@
       };
     };
   };
+
+  services = {
+    syncthing = {
+      enable = true;
+      settings = {
+        options = {
+          urAccepted = -1;
+          localAnnounceEnabled = false;
+        };
+        devices = {
+          curiousDevServer = {
+            addresses = [
+              "tcp://curious-dev.eu"
+            ];
+            id = "YP7O7WY-WWCCQPS-E54TBVB-FSKIZRV-PNXQNY7-YUZ57T3-CNHSJB4-GOWJQAA";
+          };
+        };
+        folders = {
+          "/home/dk/obsidian/Personal " = {
+            id = "foxNotes";
+            devices = [ "curiousDevServer" ];
+          };
+        };
+      };
+    };
+  };
 }
