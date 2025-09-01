@@ -182,9 +182,6 @@
         };
         devices = {
           curiousDevServer = {
-            addresses = [
-              "tcp://curious-dev.eu"
-            ];
             id = "YP7O7WY-WWCCQPS-E54TBVB-FSKIZRV-PNXQNY7-YUZ57T3-CNHSJB4-GOWJQAA";
           };
         };
