@@ -181,14 +181,14 @@
           localAnnounceEnabled = false;
         };
         devices = {
-          curiousDevServer = {
-            id = "YP7O7WY-WWCCQPS-E54TBVB-FSKIZRV-PNXQNY7-YUZ57T3-CNHSJB4-GOWJQAA";
+          nixCloud = {
+            id = "KOLOZJM-5UYU7VU-VDYYZIM-ECEFX4F-WUHKLG7-R4BRZKB-HZKKRLX-I4EB5A2";
           };
         };
         folders = {
           "/home/dk/obsidian/Personal " = {
             id = "foxNotes";
-            devices = [ "curiousDevServer" ];
+            devices = [ "nixCloud" ];
           };
         };
       };
