@@ -38,6 +38,7 @@
     # Helix editor LSPs & formatters
     pkgs.vscode-langservers-extracted
     pkgs.kdlfmt
+    pkgs.taplo
 
     # CLI apps
     pkgs.mycli
