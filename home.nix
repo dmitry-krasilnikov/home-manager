@@ -54,6 +54,7 @@
     pkgs.nushellPlugins.polars
     pkgs.nushellPlugins.gstat
     pkgs.nushellPlugins.formats
+    pkgs.nu_scripts
     pkgs.starship
     pkgs.carapace
 
