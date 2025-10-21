@@ -115,6 +115,26 @@
     enable = true;
   };
 
+  programs.git = {
+    enable = true;
+    userName = "Dmitry Krasilnikov";
+    userEmail = "krasilnikov.d.o@gmail.com";
+    signing = {
+      format = "ssh";
+      key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICFtoZ+c+OUGoOnmYIt3buwWssX8NyJTCNH5zk9HFhhm";
+      signByDefault = true;
+    };
+  };
+
+  # programs.delta = {
+  #   enable = true;
+  #   enableGitIntegration = true;
+  #   line-numbers = true;
+  #   light = true;
+  #   side-by-side = true;
+  #   navigate = true; # use 'n' & 'N' to move between diff sections
+  # };
+
   programs.nixvim = {
     enable = true;
 
