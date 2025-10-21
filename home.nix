@@ -1,4 +1,9 @@
-{ config, pkgs, nixvim, ... }:
+{
+  config,
+  pkgs,
+  nixvim,
+  ...
+}:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -117,8 +122,12 @@
 
   programs.git = {
     enable = true;
-    userName = "Dmitry Krasilnikov";
-    userEmail = "krasilnikov.d.o@gmail.com";
+    settings = {
+      user = {
+        name = "Dmitry Krasilnikov";
+        email = "krasilnikov.d.o@gmail.com";
+      };
+    };
     signing = {
       format = "ssh";
       key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICFtoZ+c+OUGoOnmYIt3buwWssX8NyJTCNH5zk9HFhhm";
@@ -126,14 +135,16 @@
     };
   };
 
-  # programs.delta = {
-  #   enable = true;
-  #   enableGitIntegration = true;
-  #   line-numbers = true;
-  #   light = true;
-  #   side-by-side = true;
-  #   navigate = true; # use 'n' & 'N' to move between diff sections
-  # };
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      line-numbers = true;
+      light = true;
+      side-by-side = true;
+      navigate = true; # use 'n' & 'N' to move between diff sections
+    };
+  };
 
   programs.nixvim = {
     enable = true;
@@ -178,7 +189,7 @@
       #  Experiment for yourself to see if you like it!
       relativenumber = true;
     };
-    
+
     plugins = {
       lualine.enable = true;
       cmp.enable = true;
