@@ -22,7 +22,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -41,30 +41,30 @@
     # '')
 
     # Helix editor LSPs & formatters
-    pkgs.vscode-langservers-extracted
-    pkgs.kdlfmt
-    pkgs.taplo
+    vscode-langservers-extracted
+    kdlfmt
+    taplo
 
     # CLI apps
-    pkgs.mycli
-    pkgs.ttyper
-    pkgs.argocd
+    mycli
+    ttyper
+    argocd
 
     # GUI apps
-    pkgs.calibre
+    calibre
 
     # Shell
-    pkgs.nushell
-    pkgs.nushellPlugins.query
-    pkgs.nushellPlugins.polars
-    pkgs.nushellPlugins.gstat
-    pkgs.nushellPlugins.formats
-    pkgs.nu_scripts
-    pkgs.starship
-    pkgs.carapace
+    nushell
+    nushellPlugins.query
+    nushellPlugins.polars
+    nushellPlugins.gstat
+    nushellPlugins.formats
+    nu_scripts
+    starship
+    carapace
 
     # Python
-    pkgs.pipx
+    pipx
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
