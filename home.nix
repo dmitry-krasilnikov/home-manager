@@ -116,6 +116,8 @@
 
   programs.yazi.enable = true;
 
+  programs.btop.enable = true;
+
   programs.zellij = {
     enable = true;
   };
