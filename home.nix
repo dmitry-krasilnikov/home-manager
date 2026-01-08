@@ -61,7 +61,6 @@
     nushellPlugins.gstat
     nushellPlugins.formats
     nu_scripts
-    starship
     carapace
 
     # Python
@@ -114,6 +113,19 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.starship = {
+    enable = true;
+    # TODO: activate when NuShell is managed through Home Manager
+    # enableNushellIntegration = true;
+  };
+
+  programs.direnv = {
+    enable = true;
+    # TODO: activate when NuShell is managed through Home Manager
+    # enableNushellIntegration = true;
+    nix-direnv.enable = true;
+  };
 
   programs.yazi.enable = true;
 
