@@ -49,6 +49,7 @@
     mycli
     ttyper
     argocd
+    mob
 
     # GUI apps
     calibre
