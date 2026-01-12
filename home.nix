@@ -20,6 +20,10 @@
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+    "ngrok"
+  ];
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
@@ -65,6 +69,8 @@
 
     # Python
     pipx
+
+    ngrok
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
