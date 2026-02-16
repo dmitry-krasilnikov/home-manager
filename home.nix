@@ -95,6 +95,8 @@
     ".config/zellij/themes/rose-pine-dawn.kdl".source = config/zellij/themes/rose-pine-dawn.kdl;
     ".config/starship.toml".source = config/starship.toml;
     ".myclirc".source = config/myclirc;
+    ".config/wezterm/wezterm.lua".source = config/wezterm/wezterm.lua;
+    ".config/wezterm/lua/colorschemes/rose-pine-dawn.lua".source = config/wezterm/lua/colorschemes/rose-pine-dawn.lua;
   };
 
   # Home Manager can also manage your environment variables through
