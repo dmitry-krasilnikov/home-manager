@@ -50,13 +50,16 @@
     taplo
 
     # CLI apps
-    mycli
+    # TODO: add using nixpkgs-stable
+    # mycli
     ttyper
     argocd
     mob
 
     # GUI apps
-    calibre
+    # TODO: add using nixpkgs-stable
+    # TODO: long-term, remove Calibre altogether
+    # calibre
 
     # Shell
     nushell
