@@ -30,57 +30,63 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages =
-    with pkgs;
-    [
-      # # Adds the 'hello' command to your environment. It prints a friendly
-      # # "Hello, world!" when run.
-      # pkgs.hello
+    builtins.attrValues {
+      inherit (pkgs)
+        # # Adds the 'hello' command to your environment. It prints a friendly
+        # # "Hello, world!" when run.
+        # pkgs.hello
 
-      # # It is sometimes useful to fine-tune packages, for example, by applying
-      # # overrides. You can do that directly here, just don't forget the
-      # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-      # # fonts?
-      # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+        # # It is sometimes useful to fine-tune packages, for example, by applying
+        # # overrides. You can do that directly here, just don't forget the
+        # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
+        # # fonts?
+        # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
-      # # You can also create simple shell scripts directly inside your
-      # # configuration. For example, this adds a command 'my-hello' to your
-      # # environment:
-      # (pkgs.writeShellScriptBin "my-hello" ''
-      #   echo "Hello, ${config.home.username}!"
-      # '')
+        # # You can also create simple shell scripts directly inside your
+        # # configuration. For example, this adds a command 'my-hello' to your
+        # # environment:
+        # (pkgs.writeShellScriptBin "my-hello" ''
+        #   echo "Hello, ${config.home.username}!"
+        # '')
 
-      # Helix editor LSPs & formatters
-      vscode-langservers-extracted
-      kdlfmt
-      taplo
+        # Helix editor LSPs & formatters
+        vscode-langservers-extracted
+        kdlfmt
+        taplo
 
-      # CLI apps
-      ttyper
-      argocd
-      mob
+        # CLI apps
+        ttyper
+        argocd
+        mob
+        ngrok
 
-      # Shell
-      nushell
-      nushellPlugins.query
-      nushellPlugins.polars
-      nushellPlugins.gstat
-      nushellPlugins.formats
-      nu_scripts
-      carapace
+        # Shell
+        nushell
+        nu_scripts
+        carapace
 
-      # Python
-      pipx
+        # Python
+        pipx
+        ;
+    }
+    ++ builtins.attrValues {
+      inherit (pkgs.nushellPlugins)
+        query
+        polars
+        gstat
+        formats
+        ;
+    }
+    ++ builtins.attrValues {
+      inherit (pkgs-stable)
+        # CLI apps
+        mycli
 
-      ngrok
-    ]
-    ++ (with pkgs-stable; [
-      # CLI apps
-      mycli
-
-      # GUI apps
-      # TODO: long-term, remove Calibre altogether
-      calibre
-    ]);
+        # GUI apps
+        # TODO: long-term, remove Calibre altogether
+        calibre
+        ;
+    };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
