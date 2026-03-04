@@ -21,61 +21,66 @@
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
-    "ngrok"
-  ];
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (pkgs.lib.getName pkg) [
+      "ngrok"
+    ];
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
+  home.packages =
+    with pkgs;
+    [
+      # # Adds the 'hello' command to your environment. It prints a friendly
+      # # "Hello, world!" when run.
+      # pkgs.hello
 
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+      # # It is sometimes useful to fine-tune packages, for example, by applying
+      # # overrides. You can do that directly here, just don't forget the
+      # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
+      # # fonts?
+      # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
+      # # You can also create simple shell scripts directly inside your
+      # # configuration. For example, this adds a command 'my-hello' to your
+      # # environment:
+      # (pkgs.writeShellScriptBin "my-hello" ''
+      #   echo "Hello, ${config.home.username}!"
+      # '')
 
-    # Helix editor LSPs & formatters
-    vscode-langservers-extracted
-    kdlfmt
-    taplo
+      # Helix editor LSPs & formatters
+      vscode-langservers-extracted
+      kdlfmt
+      taplo
 
-    # CLI apps
-    ttyper
-    argocd
-    mob
+      # CLI apps
+      ttyper
+      argocd
+      mob
 
-    # Shell
-    nushell
-    nushellPlugins.query
-    nushellPlugins.polars
-    nushellPlugins.gstat
-    nushellPlugins.formats
-    nu_scripts
-    carapace
+      # Shell
+      nushell
+      nushellPlugins.query
+      nushellPlugins.polars
+      nushellPlugins.gstat
+      nushellPlugins.formats
+      nu_scripts
+      carapace
 
-    # Python
-    pipx
+      # Python
+      pipx
 
-    ngrok
-  ] ++ (with pkgs-stable; [
-    # CLI apps
-    mycli
+      ngrok
+    ]
+    ++ (with pkgs-stable; [
+      # CLI apps
+      mycli
 
-    # GUI apps
-    # TODO: long-term, remove Calibre altogether
-    calibre
-  ]);
+      # GUI apps
+      # TODO: long-term, remove Calibre altogether
+      calibre
+    ]);
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -100,7 +105,8 @@
     ".config/starship.toml".source = config/starship.toml;
     ".myclirc".source = config/myclirc;
     ".config/wezterm/wezterm.lua".source = config/wezterm/wezterm.lua;
-    ".config/wezterm/lua/colorschemes/rose-pine-dawn.lua".source = config/wezterm/lua/colorschemes/rose-pine-dawn.lua;
+    ".config/wezterm/lua/colorschemes/rose-pine-dawn.lua".source =
+      config/wezterm/lua/colorschemes/rose-pine-dawn.lua;
   };
 
   # Home Manager can also manage your environment variables through
