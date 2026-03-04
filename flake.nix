@@ -12,22 +12,37 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, ... }:
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      nixvim,
+      nixpkgs-stable,
+      ...
+    }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
+      pkgsStable = nixpkgs-stable.legacyPackages.${system};
+    in
+    {
       homeConfigurations."dk" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ ./home.nix nixvim.homeModules.nixvim ];
+        modules = [
+          ./home.nix
+          nixvim.homeModules.nixvim
+        ];
 
         # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+        extraSpecialArgs = {
+          pkgs-stable = pkgsStable;
+        };
       };
     };
 }

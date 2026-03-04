@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  pkgs-stable,
   nixvim,
   ...
 }:
@@ -50,16 +51,9 @@
     taplo
 
     # CLI apps
-    # TODO: add using nixpkgs-stable
-    # mycli
     ttyper
     argocd
     mob
-
-    # GUI apps
-    # TODO: add using nixpkgs-stable
-    # TODO: long-term, remove Calibre altogether
-    # calibre
 
     # Shell
     nushell
@@ -74,7 +68,14 @@
     pipx
 
     ngrok
-  ];
+  ] ++ (with pkgs-stable; [
+    # CLI apps
+    mycli
+
+    # GUI apps
+    # TODO: long-term, remove Calibre altogether
+    calibre
+  ]);
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
