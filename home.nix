@@ -104,8 +104,6 @@
     # # to switch home-manager for the changes to take effect there is a way to do that
     # # with `config.lib.file.mkOutOfStoreSymlink` function outlined here https://discourse.nixos.org/t/how-to-manage-dotfiles-with-home-manager/30576/2
 
-    ".config/zellij/config.kdl".source = config/zellij/config.kdl;
-    ".config/zellij/themes/rose-pine-dawn.kdl".source = config/zellij/themes/rose-pine-dawn.kdl;
     ".config/starship.toml".source = config/starship.toml;
     ".myclirc".source = config/myclirc;
     ".config/wezterm/wezterm.lua".source = config/wezterm/wezterm.lua;
@@ -152,10 +150,6 @@
   programs.yazi.enable = true;
 
   programs.btop.enable = true;
-
-  programs.zellij = {
-    enable = true;
-  };
 
   programs.git = {
     enable = true;
