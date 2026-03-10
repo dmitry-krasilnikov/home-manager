@@ -47,11 +47,6 @@
         #   echo "Hello, ${config.home.username}!"
         # '')
 
-        # Helix editor LSPs & formatters
-        vscode-langservers-extracted
-        kdlfmt
-        taplo
-
         # CLI apps
         ttyper
         argocd
@@ -133,6 +128,78 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.helix = {
+    enable = true;
+    extraPackages = builtins.attrValues {
+      inherit (pkgs)
+        docker-compose-language-service
+        tombi
+        vscode-css-languageserver
+        vscode-langservers-extracted
+        yaml-language-server
+        ;
+    };
+    settings = {
+      theme = "rose_pine_dawn";
+      editor = {
+        auto-format = true;
+        line-number = "relative";
+        workspace-lsp-roots = [ ".git" ];
+        indent-guides = {
+          render = true;
+        };
+        soft-wrap.enable = true;
+        smart-tab.supersede-menu = true;
+        lsp.display-inlay-hints = true;
+        shell = [
+          "${pkgs.nushell}/bin/nu"
+          "--stdin"
+          "--commands"
+        ];
+      };
+      keys = {
+        normal = {
+          Y = "yank_joined";
+          space = {
+            n = {
+              d = ":pipe into datetime --format '%%s'";
+            };
+          };
+        };
+      };
+    };
+    languages = {
+      language-server = {
+        lemminx = {
+          command = "${pkgs.lemminx}/bin/lemminx";
+        };
+      };
+      language = [
+        {
+          name = "xml";
+          auto-format = true;
+          language-servers = [ "lemminx" ];
+          file-types = [
+            "xml"
+            { glob = "SFPA*"; }
+            { glob = "P.*.001.P002.*.DAT"; }
+            { glob = "P.*.003.C053.*.DAT"; }
+            { glob = "P.*.002.C053.*.DAT"; }
+            { glob = "P.*.001.C54*.*.DAT"; }
+          ];
+        }
+        {
+          name = "sql";
+          auto-format = true;
+          file-types = [ "sql" ];
+          formatter = {
+            command = "${pkgs.sleek}/bin/sleek";
+          };
+        }
+      ];
+    };
+  };
 
   programs.starship = {
     enable = true;
