@@ -129,6 +129,11 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs.emacs = {
+    enable = true;
+    extraPackages = epkgs: [ epkgs.paredit epkgs.geiser-guile epkgs.magit ];
+  };
+
   programs.helix = {
     enable = true;
     extraPackages = builtins.attrValues {
