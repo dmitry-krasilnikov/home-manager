@@ -139,6 +139,7 @@
     extraPackages = builtins.attrValues {
       inherit (pkgs)
         docker-compose-language-service
+        sleek
         tombi
         vscode-css-languageserver
         vscode-langservers-extracted
