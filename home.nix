@@ -158,7 +158,6 @@
         soft-wrap.enable = true;
         smart-tab.supersede-menu = true;
         lsp.display-inlay-hints = true;
-        whitespace.render = "all";
         shell = [
           "${pkgs.nushell}/bin/nu"
           "--stdin"
