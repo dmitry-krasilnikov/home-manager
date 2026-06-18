@@ -52,6 +52,7 @@
         argocd
         mob
         ngrok
+        tree-sitter
 
         # Shell
         nushell
