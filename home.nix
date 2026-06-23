@@ -3,7 +3,18 @@
   pkgs-stable,
   ...
 }:
-
+let
+  tree-sitter-bgmax = pkgs.tree-sitter.buildGrammar {
+    language = "bgmax";
+    version = "0.1.0";
+    src = pkgs.fetchFromGitHub {
+      owner = "dmitry-krasilnikov";
+      repo = "tree-sitter-bgmax";
+      rev = "80458abb42c38498cb34e58f176370dd16d97d47";
+      hash = "sha256-BDlG8AmQ9hexUU2aR8BB5zDsFiq1ksYtfHs1MWqVr4E=";
+    };
+  };
+in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -105,6 +116,8 @@
     ".config/wezterm/wezterm.lua".source = config/wezterm/wezterm.lua;
     ".config/wezterm/lua/colorschemes/rose-pine-dawn.lua".source =
       config/wezterm/lua/colorschemes/rose-pine-dawn.lua;
+
+    ".config/helix/runtime/grammars/bgmax.so".source = tree-sitter-bgmax.out + "/parser";
   };
 
   # Home Manager can also manage your environment variables through
@@ -203,6 +216,12 @@
           formatter = {
             command = "${pkgs.sleek}/bin/sleek";
           };
+        }
+        {
+          name = "bgmax";
+          auto-format = false;
+          file-types = [ { glob = "BFEP2.*"; } ];
+          scope = "source.bgmax";
         }
       ];
     };
