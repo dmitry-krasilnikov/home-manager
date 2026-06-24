@@ -10,8 +10,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "dmitry-krasilnikov";
       repo = "tree-sitter-bgmax";
-      rev = "80458abb42c38498cb34e58f176370dd16d97d47";
-      hash = "sha256-BDlG8AmQ9hexUU2aR8BB5zDsFiq1ksYtfHs1MWqVr4E=";
+      rev = "49119dc88345881fbc8402ec4540d05fcb8833bc";
+      hash = "sha256-xRtV2zoSFh2NPM8/dGIUZDCqeDipBYhOYsYs8bfJRlA=";
     };
   };
 in
