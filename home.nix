@@ -164,7 +164,7 @@ in
       theme = "rose_pine_dawn";
       editor = {
         auto-format = true;
-        line-number = "relative";
+        line-number = "absolute";
         workspace-lsp-roots = [ ".git" ];
         indent-guides = {
           render = true;
