@@ -253,6 +253,7 @@ in
         name = "Dmitry Krasilnikov";
         email = "krasilnikov.d.o@gmail.com";
       };
+      push.autoSetupRemote = true;
     };
     signing = {
       format = "ssh";
