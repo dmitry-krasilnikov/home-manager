@@ -155,6 +155,7 @@ in
         docker-compose-language-service
         sleek
         tombi
+        typescript-language-server
         vscode-css-languageserver
         vscode-langservers-extracted
         yaml-language-server
