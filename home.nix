@@ -332,27 +332,4 @@ in
       };
     };
   };
-
-  services = {
-    syncthing = {
-      enable = true;
-      settings = {
-        options = {
-          urAccepted = -1;
-          localAnnounceEnabled = false;
-        };
-        devices = {
-          nixCloud = {
-            id = "KOLOZJM-5UYU7VU-VDYYZIM-ECEFX4F-WUHKLG7-R4BRZKB-HZKKRLX-I4EB5A2";
-          };
-        };
-        folders = {
-          "/home/dk/obsidian/Personal " = {
-            id = "foxNotes";
-            devices = [ "nixCloud" ];
-          };
-        };
-      };
-    };
-  };
 }
