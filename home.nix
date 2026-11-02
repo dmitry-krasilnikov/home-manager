@@ -178,8 +178,6 @@ in
           "--stdin"
           "--commands"
         ];
-        end-of-line-diagnostics = "hint";
-        inline-diagnostics.cursor-line = "hint";
       };
       keys = {
         normal = {
